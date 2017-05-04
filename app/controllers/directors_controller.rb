@@ -9,7 +9,7 @@ class DirectorsController < ApplicationController
   end
 
   def new_form
-  
+
   end
 
   def create_row
@@ -20,8 +20,8 @@ class DirectorsController < ApplicationController
     @director.image_url = params[:image_url]
 
     @director.save
-    render("show")
-    # redirect_to("directors/show_details.html.erb")
+    # render("show")
+    redirect_to("/directors/#{@director.id}")
   end
 
   def edit_form
