@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
     @movie.duration = params[:the_duration]
     @movie.description = params[:the_description]
     @movie.image_url = params[:the_image_url]
-    @movie.director_id = params[:the_director_id]
+    @movie.director_id = params[:director_id]
     @movie.save
     redirect_to("/movies/#{@movie.id}")
   end
@@ -27,7 +27,7 @@ class MoviesController < ApplicationController
   end
 
   def update_row
-    @movie = Movies.find(params[:id])
+    @movie = Movie.find(params[:id])
     @movie.title = params[:title]
     @movie.year = params[:year]
     @movie.duration = params[:duration]
